@@ -1,28 +1,35 @@
-//
+//State, how to define and use
 'use client'
+import { useState } from "react";
 
 export default function Home() {
-  
-  //1. Decaration of Function inside Home Component
-  const apple = () =>{
-    alert("Apple is a Fruit");
+
+  //Defining a State
+  const[userName, setUserName] = useState("Anil");
+
+  const displayName = () =>{
+      //Changing the userName using useState from React
+      setUserName("Shubham");
   }
 
-  //2. How to pass data on a function
-  // const apple = (fruit) =>{
-  //   alert(fruit);
-  // }
+  //How to use one Component inside Another Component
+  //What's the Difference between Normal Component and Component Function?
+  const InnerComponent = () =>{
+    return(
+      <h2>Inner Component</h2>
+    )
+  }
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1>Event, Function and State</h1>
+      <h2>Hi, This code is written by {userName}</h2>
 
-      {/* 1. shows how can we use function inside COmponent */}
-      <button onClick={() => apple()}>Click Me</button>
+      {/* <InnerComponent/> */}
 
-      {/* 2. Shows how to pass data on function */}
-      {/* <button onClick={() => apple("Banana")}>Click Me</button> */}
-      <h1>Home Page</h1>
+      {/* Component Function */}
+      {/* {InnerComponent()} */}
+      <button onClick={displayName}>Click Me</button> 
     </main>
   )
 }
