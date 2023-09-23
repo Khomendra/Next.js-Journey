@@ -13,7 +13,7 @@ export default function Home() {
   const router = useRouter();
 
   //Created a functon and passing '/login' and '/about' as parameter
-  const navigate = (name) =>{
+  const navigate = (name: any) =>{
       router.push(name)
   }
 

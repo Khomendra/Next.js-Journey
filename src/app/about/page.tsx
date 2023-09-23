@@ -15,6 +15,10 @@ const About = () =>{
 
             {/* Navigation */}
             <button onClick={() => router.push("/")}>Home</button>
+
+            {/* Nested Routing */}
+            <Link href="/about/college">College</Link>
+            <Link href="/about/student">Student</Link>
         </div>
     )
 }
